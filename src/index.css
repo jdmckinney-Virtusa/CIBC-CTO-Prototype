@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Whitney', 'Whitney Book', 'Whitney Semibold', 'Whitney Light', 'Inter', sans-serif;
+  --cibc-burgundy: #8B1D41;
+  --cibc-burgundy-dark: #6E1734;
+  --cibc-burgundy-tint: #D4A0B5;
+  --cibc-burgundy-bg: #F9EDF2;
+  --cibc-text-primary: #383B3E;
+  --cibc-text-secondary: #606366;
+  --cibc-text-disabled: #BBBCBC;
+  --cibc-text-error: #C41F3E;
+  --cibc-text-reverse: #FFFFFF;
+  --cibc-bg-primary: #FFFFFF;
+  --cibc-bg-secondary: #F2F3F2;
+  --cibc-bg-dark: #606366;
+  --cibc-bg-error: #FAF1F3;
+  --cibc-border-primary: #DDDDDD;
+  --cibc-border-secondary: #86888A;
+  --cibc-border-dark: #606366;
+  --cibc-success: #4A9E6B;
+  --cibc-success-deep: #3D8559;
+  --cibc-success-bg: #DCF0E3;
+  --cibc-error: #C41F3E;
+  --cibc-warning: #C17200;
+  --cibc-info: #0056A3;
+  --cibc-info-bg: #EDF4FB;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --color-cibc-burgundy: var(--cibc-burgundy);
+  --color-cibc-burgundy-dark: var(--cibc-burgundy-dark);
+  --color-cibc-burgundy-tint: var(--cibc-burgundy-tint);
+  --color-cibc-burgundy-bg: var(--cibc-burgundy-bg);
+  --color-cibc-text-primary: var(--cibc-text-primary);
+  --color-cibc-text-secondary: var(--cibc-text-secondary);
+  --color-cibc-text-disabled: var(--cibc-text-disabled);
+  --color-cibc-text-error: var(--cibc-text-error);
+  --color-cibc-text-reverse: var(--cibc-text-reverse);
+  --color-cibc-bg-primary: var(--cibc-bg-primary);
+  --color-cibc-bg-secondary: var(--cibc-bg-secondary);
+  --color-cibc-bg-dark: var(--cibc-bg-dark);
+  --color-cibc-bg-error: var(--cibc-bg-error);
+  --color-cibc-border-primary: var(--cibc-border-primary);
+  --color-cibc-border-secondary: var(--cibc-border-secondary);
+  --color-cibc-border-dark: var(--cibc-border-dark);
+  --color-cibc-success: var(--cibc-success);
+  --color-cibc-success-deep: var(--cibc-success-deep);
+  --color-cibc-success-bg: var(--cibc-success-bg);
+  --color-cibc-error: var(--cibc-error);
+  --color-cibc-warning: var(--cibc-warning);
+  --color-cibc-info: var(--cibc-info);
+  --color-cibc-info-bg: var(--cibc-info-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--cibc-text-primary);
+  background: var(--cibc-bg-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cibc-logo { font-family: 'Whitney', 'Inter', sans-serif; color: #8B1D41; display: inline-flex; gap: 0.35em; align-items: baseline; line-height: 1; letter-spacing: 0.01em; } 
+.cibc-logo__cibc { font-weight: 700; } 
+.cibc-logo__pw { font-weight: 300; }
+
+.sidebar-item {
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item.active {
+  border-left-color: var(--cibc-burgundy);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-field {
+  background: var(--cibc-bg-primary);
+  border: 1px solid var(--cibc-border-primary);
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 100%;
+  font-size: 14px;
+  color: var(--cibc-text-primary);
+}
+
+.loading-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--cibc-burgundy);
+}
+
+/* Enable active display when it contains a special class or is managed by react */
+.loading-overlay.active {
+  display: flex;
+}
+
+.cibc-header {
+  background: var(--cibc-bg-primary);
+  border-bottom: 1px solid var(--cibc-border-primary);
+}
+.cibc-card {
+  background: var(--cibc-bg-primary);
+  border: 1px solid var(--cibc-border-primary);
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+.cibc-card-compact {
+  background: var(--cibc-bg-primary);
+  border: 1px solid var(--cibc-border-primary);
+  border-radius: 8px;
+}
+.cibc-btn-primary {
+  background: var(--cibc-burgundy) !important;
+  color: var(--cibc-text-reverse) !important;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+}
+.cibc-btn-primary:hover {
+  background: var(--cibc-burgundy-dark) !important;
+}
+.cibc-btn-secondary {
+  background: transparent !important;
+  color: var(--cibc-burgundy) !important;
+  border: 1px solid var(--cibc-burgundy) !important;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cibc-btn-secondary:hover {
+  background: var(--cibc-burgundy-bg) !important;
+}
+.cibc-pill-success {
+  background: var(--cibc-success-bg) !important;
+  color: var(--cibc-success-deep) !important;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.cibc-pill-error {
+  background: var(--cibc-bg-error) !important;
+  color: var(--cibc-text-error) !important;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.cibc-pill-info {
+  background: var(--cibc-info-bg) !important;
+  color: var(--cibc-info) !important;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.cibc-text-warning {
+  color: var(--cibc-warning) !important;
+}
+
